@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="top-section">
+    <div class="title">
+      Вопрос №{{index +1}}
+    </div>
+    <div class="subtitle">
+      {{questionData.question}}
+    </div>
+    <section class="section">
+      <mat-checkbox 
+      *ngFor="let variant of questionData.variants; let i = index"
+      [checked]="selected === i"
+      (change)="selected = i"
+      color="primary"
+      class="checkbox">
+        <div class="varik">
+          {{variant}}
+        </div>
+      </mat-checkbox>
+    </section>  
+  </div>
+  <button
+    mat-button 
+    class="next"
+    (click)="closeDialog(questionData.variants[selected], selected)">
+    Дальше
+  </button>
+</div>

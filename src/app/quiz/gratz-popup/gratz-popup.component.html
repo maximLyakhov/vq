@@ -1,0 +1,13 @@
+<mat-card *ngIf="userAnswers.length">
+    <mat-card-title>
+        Ваши ответы:
+    </mat-card-title>
+    <mat-card-content style="text-align: left;">
+        <div>
+            <div *ngFor="let ans of userAnswers; let i = index">
+                {{questions[i].question}} : {{ans}}
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+<div style="margin-top: 50px;">Ваша заявка отправлена!</div>

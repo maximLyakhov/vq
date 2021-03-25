@@ -1,0 +1,36 @@
+<mat-progress-bar mode="determinate" [value]="progressBarValue" class="progressBar" color="warn"></mat-progress-bar>
+
+<div class="title" *ngIf="questions.length > index">
+    {{(index + 1)}}. {{questions[this.index].title}}
+</div>
+
+<div class="wrapper">
+
+    <mat-card 
+        class="hello"
+        *ngIf="userAnswers.length < 1">
+        Здравствуйте меня зовут Дмитрий, 
+        если у вас испорчена кредитная история 
+        и вы не можете получить кредит в банках, 
+        мы вам поможем. Ответьте на вопросы ниже, 
+        и мы подготовим для вас несколько предложений.
+    </mat-card>
+
+    <mat-card class="around">
+        <app-video class="video"></app-video>
+    </mat-card>
+
+    <mat-card *ngIf="userAnswers.length" class="answers">
+        <mat-card-title>
+            Ваши ответы:
+        </mat-card-title>
+        <mat-card-content style="text-align: left;">
+            <div>
+                <div *ngFor="let ans of userAnswers; let i = index">
+                    {{questions[i].question}} : {{ans}}
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+</div>
