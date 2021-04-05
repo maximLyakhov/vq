@@ -13,16 +13,16 @@ export class GratzPopupComponent implements OnInit {
     private readonly quizS: QuizService
   ) { }
 
-  ngOnInit(): void {
+  get userAnswers(): string[] {
+    return this.quizS.userAnswers;
+  }
+
+  get answersLength(): number {
+    return this.quizS.userAnswers.length;
   }
 
   questions = questions;
-  
-  get userAnswers() {
-    return this.quizS.userAnswers
-  }
 
-  get answersLength() {
-    return this.quizS.userAnswers.length
+  ngOnInit(): void {
   }
 }

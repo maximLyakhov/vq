@@ -6,7 +6,7 @@ import { QuizService } from './service/quiz.service';
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.scss'],
 })
-export class QuizComponent implements OnInit {
+export class QuizComponent {
   constructor(
     readonly quizS: QuizService,
     ) {}
@@ -29,8 +29,5 @@ export class QuizComponent implements OnInit {
 
   get progressBarValue() {
     return this.quizS.progressBarValue()
-  } 
-
-  ngOnInit() {
   }
 }

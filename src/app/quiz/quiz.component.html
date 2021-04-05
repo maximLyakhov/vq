@@ -1,12 +1,16 @@
 <mat-progress-bar mode="determinate" [value]="progressBarValue" class="progressBar" color="warn"></mat-progress-bar>
 
-<div class="title" *ngIf="questions.length > index">
-    {{(index + 1)}}. {{questions[this.index].title}}
+<div class="title" *ngIf="questions.length > index && index > 0; else nothing">
+    {{(index)}}. {{questions[this.index].title}}
 </div>
+
+<ng-template #nothing>
+    <div class="title" style="background-color: white;"></div>
+</ng-template>
 
 <div class="wrapper">
 
-    <mat-card 
+    <!-- <mat-card 
         class="hello"
         *ngIf="userAnswers.length < 1">
         Здравствуйте меня зовут Дмитрий, 
@@ -14,7 +18,7 @@
         и вы не можете получить кредит в банках, 
         мы вам поможем. Ответьте на вопросы ниже, 
         и мы подготовим для вас несколько предложений.
-    </mat-card>
+    </mat-card> -->
 
     <mat-card class="around">
         <app-video class="video"></app-video>

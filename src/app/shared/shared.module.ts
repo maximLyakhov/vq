@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from "@angular/material/icon";
 import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSnackBarModule } from '@angular/material/snack-bar'; // для "ответа" на выбор
@@ -9,8 +11,10 @@ import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/materia
 
 @NgModule({ 
   imports: [
+    MatIconModule,
     MatCardModule,
     CommonModule,
+    MatInputModule,
     MatDialogModule, 
     MatButtonModule,
     MatSnackBarModule,
@@ -18,7 +22,9 @@ import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/materia
     MatProgressBarModule, 
   ],
   exports: [
+    MatIconModule,
     MatCardModule,
+    MatInputModule,
     MatDialogModule, 
     MatButtonModule,
     MatSnackBarModule,

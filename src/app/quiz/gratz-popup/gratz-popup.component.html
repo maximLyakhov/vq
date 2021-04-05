@@ -10,4 +10,16 @@
         </div>
     </mat-card-content>
 </mat-card>
-<div style="margin-top: 50px;">Ваша заявка отправлена!</div>
+<div style="margin-top: 50px; display: flex; flex-direction: column; justify-content: center;">
+    <span>
+        Укажите номер Вашего телефона, чтобы мы могли связаться с вами!
+    </span>
+    <form class="example-form" style="margin-top: 50px;">
+        <mat-form-field class="example-full-width">
+          <mat-label>Номер телефона</mat-label>
+          <span matPrefix>+7 &nbsp;</span>
+          <input type="tel" matInput placeholder="999-555-55-55">
+          <mat-icon matSuffix>mode_edit</mat-icon>
+        </mat-form-field>
+      </form>
+</div>

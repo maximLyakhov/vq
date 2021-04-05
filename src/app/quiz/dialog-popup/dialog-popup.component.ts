@@ -1,4 +1,3 @@
-import { animate, style, transition, trigger } from '@angular/animations';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialogRef } from '@angular/material/dialog';
 import { questions } from 'src/app/shared/questions';
@@ -13,12 +12,12 @@ import { QuizService } from '../service/quiz.service';
 export class DialogPopupComponent implements OnInit {
 
   questionData: any;
-  preview: string = '';
-  selected: number = -1;
+  preview = '';
+  selected = -1;
   questions = questions;
 
-  get index() {
-    return this.quizS.index
+  get index(): number {
+    return this.quizS.index;
   }
 
   constructor(
@@ -27,23 +26,25 @@ export class DialogPopupComponent implements OnInit {
     private snackBar: MatSnackBar
   ) { }
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
     this.quizS.obs.subscribe(res => {
-      this.questionData = res
-      this.preview = `https://img.youtube.com/vi/${res.videoId}/0.jpg`
-    })
+      this.questionData = res;
+      this.preview = `https://img.youtube.com/vi/${res.videoId}/0.jpg`;
+    });
   }
 
-  closeDialog(answer: any, selected: number) {
+  closeDialog(answer: any, selected: number): void {
     if (answer) {
-      const duration: number = 3000;
+      const duration = 3000;
       if (this.questionData.replies.length) {
-        this.snackBar.open(this.questionData.replies[selected], 'Хорошо!', { duration: duration, horizontalPosition: 'center', verticalPosition: 'top' })
+        this.snackBar.open(
+          this.questionData.replies[selected], 'Хорошо!',
+          { duration, horizontalPosition: 'center', verticalPosition: 'top'});
         setTimeout(() => {
-          this.dialogRef.close(answer)
+          this.dialogRef.close(answer);
         }, duration);
       } else {
-        this.dialogRef.close(answer)
+        this.dialogRef.close(answer);
       }
     } else {
       console.error(answer);

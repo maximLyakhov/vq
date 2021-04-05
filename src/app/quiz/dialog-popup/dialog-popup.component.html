@@ -1,7 +1,7 @@
 <div class="card">
   <div class="top-section">
-    <div class="title">
-      Вопрос №{{index +1}}
+    <div class="title" *ngIf="index > 0">
+      Вопрос №{{index}}
     </div>
     <div class="subtitle">
       {{questionData.question}}
