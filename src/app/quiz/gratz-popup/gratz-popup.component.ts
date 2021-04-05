@@ -1,4 +1,3 @@
-import { questions } from 'src/app/shared/questions';
 import { QuizService } from './../service/quiz.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -21,7 +20,7 @@ export class GratzPopupComponent implements OnInit {
     return this.quizS.userAnswers.length;
   }
 
-  questions = questions;
+  questions = this.quizS.questions;
 
   ngOnInit(): void {
   }

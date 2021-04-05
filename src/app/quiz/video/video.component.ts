@@ -17,8 +17,8 @@ export class VideoComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.appService.obs.subscribe(res => {
       this.vidService.videoId = res.videoId
-      this.vidService.start = res.start
-      this.vidService.end = res.end
+      // this.vidService.start = res.start
+      // this.vidService.end = res.end
       this.cd.detectChanges()
     })
     this.vidService.initYoutubePlayer()

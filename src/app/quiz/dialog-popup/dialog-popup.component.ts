@@ -1,6 +1,5 @@
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialogRef } from '@angular/material/dialog';
-import { questions } from 'src/app/shared/questions';
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../service/quiz.service';
 
@@ -14,7 +13,7 @@ export class DialogPopupComponent implements OnInit {
   questionData: any;
   preview = '';
   selected = -1;
-  questions = questions;
+  questions = this.quizS.questions;
 
   get index(): number {
     return this.quizS.index;

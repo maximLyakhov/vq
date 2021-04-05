@@ -5,21 +5,22 @@
     <mat-card-content style="text-align: left;">
         <div>
             <div *ngFor="let ans of userAnswers; let i = index">
-                {{questions[i].question}} : {{ans}}
+                {{questions[i].question}} – {{ans}}
             </div>
         </div>
     </mat-card-content>
 </mat-card>
-<div style="margin-top: 50px; display: flex; flex-direction: column; justify-content: center;">
+<div style="margin-top: 50px; display: flex; flex-direction: column; justify-content: center; padding: 16px;">
     <span>
         Укажите номер Вашего телефона, чтобы мы могли связаться с вами!
     </span>
-    <form class="example-form" style="margin-top: 50px;">
+    <form class="example-form" style="margin: 20px; margin-left: 120px;">
         <mat-form-field class="example-full-width">
           <mat-label>Номер телефона</mat-label>
           <span matPrefix>+7 &nbsp;</span>
           <input type="tel" matInput placeholder="999-555-55-55">
           <mat-icon matSuffix>mode_edit</mat-icon>
         </mat-form-field>
-      </form>
+    </form>
+    <button mat-raised-button>Отправить</button>
 </div>

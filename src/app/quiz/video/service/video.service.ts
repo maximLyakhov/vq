@@ -9,8 +9,8 @@ import { Injectable, NgZone } from '@angular/core';
 })
 export class VideoService {
   videoId: string = '';
-  start!: number;
-  end!: number;
+  // start!: number;
+  // end!: number;
   player: any;
 
   constructor(
@@ -46,13 +46,13 @@ export class VideoService {
       playerVars: {
         origin: `https://${window.location.host}`,
         modestbranding: 1,
-        cc_load_policy: 1,
-        iv_load_policy: 1,
-        start: this.start,
+        // start: this.start,
+        cc_load_policy: 0,
+        iv_load_policy: 0,
+        // end: this.end,
         playsinline: 1,
-        end: this.end,
         color: 'white',
-        disablekb: 0,
+        disablekb: 1,
         showinfo: 0,
         autohide: 1,
         autoplay: 1,
@@ -125,8 +125,8 @@ export class VideoService {
               this.dialog.open(GratzPopupComponent, dialogConfig);
             } else {
               this.videoId = res.videoId
-              this.start = res.start
-              this.end = res.end  
+              // this.start = res.start
+              // this.end = res.end  
               this.initYoutubePlayer();
             }
           });
