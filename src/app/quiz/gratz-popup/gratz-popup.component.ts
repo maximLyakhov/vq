@@ -1,12 +1,12 @@
 import { QuizService } from './../service/quiz.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-gratz-popup',
   templateUrl: './gratz-popup.component.html',
   styleUrls: ['./gratz-popup.component.scss']
 })
-export class GratzPopupComponent implements OnInit {
+export class GratzPopupComponent {
 
   constructor(
     private readonly quizS: QuizService
@@ -21,7 +21,4 @@ export class GratzPopupComponent implements OnInit {
   }
 
   questions = this.quizS.questions;
-
-  ngOnInit(): void {
-  }
 }
